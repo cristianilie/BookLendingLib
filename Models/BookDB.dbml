@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BookDB" Class="BookDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BookDB.mdf;Integrated Security=True" SettingsObjectName="BookLendingLib.Properties.Settings" SettingsPropertyName="BookDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Books" Member="Books">
+    <Type Name="Book">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="Isbn" Type="System.String" DbType="VarChar(140)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Book_RentedBook" Member="RentedBooks" ThisKey="Id" OtherKey="BookId" Type="RentedBook" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reader" Member="Readers">
+    <Type Name="Reader">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="SerialNumber" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IdNumber" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Adress" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="AltContactMethods" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Association Name="Reader_RentedBook" Member="RentedBooks" ThisKey="Id" OtherKey="ReaderId" Type="RentedBook" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RentedBooks" Member="RentedBooks">
+    <Type Name="RentedBook">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReaderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RentStartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="RentEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Book_RentedBook" Member="Book" ThisKey="BookId" OtherKey="Id" Type="Book" IsForeignKey="true" />
+      <Association Name="Reader_RentedBook" Member="Reader" ThisKey="ReaderId" OtherKey="Id" Type="Reader" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

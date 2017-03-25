@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="BookLendingLib.Views.BookAddView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookLendingLib.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Background="Beige">
+    <Grid>
+        <TextBox x:Name="txtBxBookTitle" HorizontalAlignment="Left" Height="21" Margin="18,19,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="txtBxBookAuthor" HorizontalAlignment="Left" Height="21" Margin="18,45,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="txtBxBookIsbn" HorizontalAlignment="Left" Height="21" Margin="18,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="txtBxBookQuantity" HorizontalAlignment="Left" Height="21" Margin="18,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
+        <Button x:Name="btnAddBook" Content="Add" HorizontalAlignment="Left" Margin="18,135,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnDeleteBook" Content="Delete" HorizontalAlignment="Left" Margin="98,135,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnClearBook" Content="Clear" HorizontalAlignment="Left" Margin="178,135,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</UserControl>
