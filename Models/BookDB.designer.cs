@@ -110,7 +110,9 @@ namespace BookLendingLib.Models
 		
 		private string _Isbn;
 		
-		private int _Quantity;
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<int> _RezervedQty;
 		
 		private EntitySet<RentedBook> _RentedBooks;
 		
@@ -126,8 +128,10 @@ namespace BookLendingLib.Models
     partial void OnAuthorChanged();
     partial void OnIsbnChanging(string value);
     partial void OnIsbnChanged();
-    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanging(System.Nullable<int> value);
     partial void OnQuantityChanged();
+    partial void OnRezervedQtyChanging(System.Nullable<int> value);
+    partial void OnRezervedQtyChanged();
     #endregion
 		
 		public Book()
@@ -216,8 +220,8 @@ namespace BookLendingLib.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
 		{
 			get
 			{
@@ -232,6 +236,26 @@ namespace BookLendingLib.Models
 					this._Quantity = value;
 					this.SendPropertyChanged("Quantity");
 					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RezervedQty", DbType="Int")]
+		public System.Nullable<int> RezervedQty
+		{
+			get
+			{
+				return this._RezervedQty;
+			}
+			set
+			{
+				if ((this._RezervedQty != value))
+				{
+					this.OnRezervedQtyChanging(value);
+					this.SendPropertyChanging();
+					this._RezervedQty = value;
+					this.SendPropertyChanged("RezervedQty");
+					this.OnRezervedQtyChanged();
 				}
 			}
 		}
@@ -508,6 +532,8 @@ namespace BookLendingLib.Models
 		
 		private System.Nullable<System.DateTime> _RentEndDate;
 		
+		private System.Nullable<int> _RezervedQty;
+		
 		private EntityRef<Book> _Book;
 		
 		private EntityRef<Reader> _Reader;
@@ -526,6 +552,8 @@ namespace BookLendingLib.Models
     partial void OnRentStartDateChanged();
     partial void OnRentEndDateChanging(System.Nullable<System.DateTime> value);
     partial void OnRentEndDateChanged();
+    partial void OnRezervedQtyChanging(System.Nullable<int> value);
+    partial void OnRezervedQtyChanged();
     #endregion
 		
 		public RentedBook()
@@ -639,6 +667,26 @@ namespace BookLendingLib.Models
 					this._RentEndDate = value;
 					this.SendPropertyChanged("RentEndDate");
 					this.OnRentEndDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RezervedQty", DbType="Int")]
+		public System.Nullable<int> RezervedQty
+		{
+			get
+			{
+				return this._RezervedQty;
+			}
+			set
+			{
+				if ((this._RezervedQty != value))
+				{
+					this.OnRezervedQtyChanging(value);
+					this.SendPropertyChanging();
+					this._RezervedQty = value;
+					this.SendPropertyChanged("RezervedQty");
+					this.OnRezervedQtyChanged();
 				}
 			}
 		}

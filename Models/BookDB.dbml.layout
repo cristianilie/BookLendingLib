@@ -2,36 +2,36 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BookDB">
   <DataContextMoniker Name="/BookDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="f67b414f-0944-4b59-a120-76897112bb6b" absoluteBounds="0.75, 1, 2, 1.7708968098958331">
+    <classShape Id="a80f852e-043f-4436-adda-6c48a1813a8e" absoluteBounds="3.5, 1.125, 2, 1.9631982421875">
       <DataClassMoniker Name="/BookDBDataContext/Book" />
       <nestedChildShapes>
-        <elementListCompartment Id="d57a899e-1fca-4ac0-a6cd-de430c0e87f2" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ad0f94a5-c97b-4424-9724-277993170ad8" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2c83cb34-c190-4e50-b8bf-a75afc96aeb5" absoluteBounds="0.75, 3, 2, 1.9631982421875">
+    <classShape Id="257181c4-dd91-4741-b1ff-9741c4728179" absoluteBounds="7.125, 1.125, 2, 1.9631982421875">
       <DataClassMoniker Name="/BookDBDataContext/Reader" />
       <nestedChildShapes>
-        <elementListCompartment Id="a24f361c-0d7b-45b1-94aa-2cd30207c44e" absoluteBounds="0.76499999999999968, 3.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="30bcfb9d-7af0-4892-b7e0-9b08488cad10" absoluteBounds="7.14, 1.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d1d84b38-984c-4251-9232-36ab9880dd62" absoluteBounds="6, 1.5, 2, 1.7708968098958331">
+    <classShape Id="1dae4ad9-51d0-45e7-bfcc-bafe8156fe1c" absoluteBounds="5.25, 4, 2, 1.9631982421875">
       <DataClassMoniker Name="/BookDBDataContext/RentedBook" />
       <nestedChildShapes>
-        <elementListCompartment Id="9fac6b82-3d5c-4e67-9bd5-36f3fc64120d" absoluteBounds="6.015, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6922b9ee-eaa8-46bd-9719-69e56a8ac69a" absoluteBounds="5.265, 4.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.13544840494792); (6 : 2.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.3749995 : 3.0881982421875); (4.3749995 : 4.98159912109375); (5.25 : 4.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BookDBDataContext/Book/Book_RentedBook" />
       <nodes>
-        <classShapeMoniker Id="f67b414f-0944-4b59-a120-76897112bb6b" />
-        <classShapeMoniker Id="d1d84b38-984c-4251-9232-36ab9880dd62" />
+        <classShapeMoniker Id="a80f852e-043f-4436-adda-6c48a1813a8e" />
+        <classShapeMoniker Id="1dae4ad9-51d0-45e7-bfcc-bafe8156fe1c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.11704802604167); (7 : 4.11704802604167); (7 : 3.27089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.1875005 : 3.0881982421875); (8.1875005 : 4.98159912109375); (7.25 : 4.98159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BookDBDataContext/Reader/Reader_RentedBook" />
       <nodes>
-        <classShapeMoniker Id="2c83cb34-c190-4e50-b8bf-a75afc96aeb5" />
-        <classShapeMoniker Id="d1d84b38-984c-4251-9232-36ab9880dd62" />
+        <classShapeMoniker Id="257181c4-dd91-4741-b1ff-9741c4728179" />
+        <classShapeMoniker Id="1dae4ad9-51d0-45e7-bfcc-bafe8156fe1c" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

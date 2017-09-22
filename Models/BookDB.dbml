@@ -6,7 +6,8 @@
       <Column Name="Title" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="Author" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
       <Column Name="Isbn" Type="System.String" DbType="VarChar(140)" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RezervedQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Book_RentedBook" Member="RentedBooks" ThisKey="Id" OtherKey="BookId" Type="RentedBook" />
     </Type>
   </Table>
@@ -28,6 +29,7 @@
       <Column Name="ReaderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="RentStartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="RentEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RezervedQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Book_RentedBook" Member="Book" ThisKey="BookId" OtherKey="Id" Type="Book" IsForeignKey="true" />
       <Association Name="Reader_RentedBook" Member="Reader" ThisKey="ReaderId" OtherKey="Id" Type="Reader" IsForeignKey="true" />
     </Type>

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BookLendingLib.Views
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Interaction logic for ProductManagement.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class ProductManagement : UserControl
     {
-        public HomeView()
+        public ProductManagement()
         {
             InitializeComponent();
         }

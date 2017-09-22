@@ -7,11 +7,11 @@ using System.Windows.Input;
 
 namespace BookLendingLib.ViewModels.Comands
 {
-    public class TblQryCommand : ICommand
+    public class DefCommand : ICommand
     {
         private Action _exec;
 
-        public TblQryCommand(Action exc)
+        public DefCommand(Action exc)
         {
             if (exc == null)
                 throw new NullReferenceException("Exec is null!");

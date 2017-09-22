@@ -6,6 +6,20 @@
              xmlns:lcl2="clr-namespace:BookLendingLib.Views"
              StartupUri="Views/MainWindow.xaml" >
     <Application.Resources>
-
+        <DataTemplate DataType="{x:Type vmdlz:MainWindowViewModel}">
+            <lcl:MainWindow />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmdlz:HomeViewModel}">
+            <lcl2:HomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmdlz:ReaderManagingViewModel}">
+            <lcl2:ReaderManagingView  />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmdlz:BookManagingViewModel}">
+            <lcl2:BookManagingView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmdlz:ProductManagementViewModel}">
+            <lcl2:ProductManagement />
+        </DataTemplate>
     </Application.Resources>
 </Application>

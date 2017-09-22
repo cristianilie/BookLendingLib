@@ -11,100 +11,80 @@ namespace BookLendingLib.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private Reader selectedReader;
-        private Book selectedBook;
+        #region Private Properties
 
         private object currentView;
+        private HomeViewModel homeVM;
+        private ReaderManagingViewModel readerManagingVM;
+        private BookManagingViewModel bookManagingVM;
+        private ProductManagementViewModel productManagingVM;
 
-        private ObservableCollection<Book> bookList;
-        private ObservableCollection<Reader> readerList;
-        
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Constructor for MainWindow's ViewModel
+        /// </summary>
         public MainWindowViewModel()
         {
-            SelectedReader = new Reader();
+            homeVM = new HomeViewModel(this);
+            readerManagingVM = new ReaderManagingViewModel(homeVM);
+            bookManagingVM = new BookManagingViewModel(homeVM);
+            productManagingVM = new ProductManagementViewModel(homeVM);
+            CurrentView = homeVM;
 
-
-            SelectedBook = new Book();
-
-            BookDBDataContext bdb = new BookDBDataContext();
-            BookDBDataContext rdb = new BookDBDataContext();
-
-            ReadersList = new ObservableCollection<Reader>(rdb.Readers);
-            BookList = new ObservableCollection<Book>(bdb.Books);
-
-           
-
+            ChangeViewToHomeView = new DefCommand(DisplayHomeView);
+            ChangeViewToReaderManagView = new DefCommand(DisplayReaderManagingView);
+            ChangeViewToBookManagView = new DefCommand(DisplayBookManagingView);
+            ChangeViewToProductManagView = new DefCommand(DisplayProductManagingView);
         }
 
+        #endregion
+
+        #region Public Properties
+
+        //The view that is currently displayed in the content control(HomeView is default)
         public object CurrentView
         {
             get { return currentView; }
             set { currentView = value; RaisePropertyChanged(); }
         }
 
-        public BookListFilter BookListViewMode { get; set; }
-
-       
-
-
-        //Book List
-        public ObservableCollection<Book> BookList
-        {
-            get { return bookList; }
-            set
-            {
-                if (bookList != value)
-                {
-                    bookList = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        //Reader List
-        public ObservableCollection<Reader> ReadersList
-        {
-            get { return readerList; }
-            set
-            {
-                if (readerList != value)
-                {
-                    readerList = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        #region Selected Items
-
-        public Reader SelectedReader
-        {
-            get { return selectedReader; }
-            set
-            {
-                if (selectedReader != value)
-                {
-                    selectedReader = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public Book SelectedBook
-        {
-            get { return selectedBook; }
-            set
-            {
-                if (selectedBook != value)
-                {
-                    selectedBook = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
+        //Commands to switch between the views
+        public DefCommand ChangeViewToHomeView { get; private  set; }
+        public DefCommand ChangeViewToReaderManagView { get; private set; }
+        public DefCommand ChangeViewToBookManagView { get; private set; }
+        public DefCommand ChangeViewToProductManagView { get; private set; }
 
         #endregion
 
+        #region Public Methods
 
+        //Display the Home(default) view
+        public void DisplayHomeView()
+        {
+            CurrentView = homeVM;
+        }
+
+        //Display the ReaderManaging View
+        public void DisplayReaderManagingView()
+        {
+            CurrentView = readerManagingVM;
+        }
+
+        //Display the BookManaging View
+        public void DisplayBookManagingView()
+        {
+            CurrentView = bookManagingVM;
+        }
+
+        //Display the ProductManaging View
+        public void DisplayProductManagingView()
+        {
+            CurrentView = productManagingVM;
+        }
+
+        #endregion
     }
 }

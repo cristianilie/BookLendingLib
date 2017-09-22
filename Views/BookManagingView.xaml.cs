@@ -18,9 +18,9 @@ namespace BookLendingLib.Views
     /// <summary>
     /// Interaction logic for BookAddView.xaml
     /// </summary>
-    public partial class BookAddView : UserControl
+    public partial class BookManagingView : UserControl
     {
-        public BookAddView()
+        public BookManagingView()
         {
             InitializeComponent();
         }

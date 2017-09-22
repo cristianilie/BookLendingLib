@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookLendingLib"
         mc:Ignorable="d"
-        Title="Book Library App" Height="560" Width="540">
+        Title="Book Library App" Height="520" Width="540">
     <Grid>
-        <ContentControl Content="{Binding CurrentView}" Height="340" Width="500" />
-        <Button x:Name="btnMainView" Content="Home" HorizontalAlignment="Left" Margin="16,70,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnBookManagingView" Content="Reader Options" HorizontalAlignment="Left" Margin="96,70,0,0" VerticalAlignment="Top" Width="92"/>
-        <Button x:Name="btnReaderManagingView" Content="Books Options" HorizontalAlignment="Left" Margin="193,70,0,0" VerticalAlignment="Top" Width="92"/>
+        <ContentControl Content="{Binding CurrentView}" Height="380" Width="500" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="18,0,14,31"/>
+        <Button x:Name="btnHomeView" Content="Home" Command="{Binding ChangeViewToHomeView, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="18,24,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnBookManagingView" Content="Reader Options" Command="{Binding ChangeViewToReaderManagView,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="98,24,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button x:Name="btnReaderManagingView" Content="Books Options" Command="{Binding ChangeViewToBookManagView,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="195,24,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button x:Name="btnProductManagement" Content="Book Management" Command="{Binding ChangeViewToProductManagView, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="292,24,0,0" VerticalAlignment="Top" Width="104"/>
     </Grid>
 </Window>
